@@ -1,0 +1,34 @@
+-- Create a clothing store database --
+
+CREATE TABLE clothes (id INTEGER PRIMARY KEY, type TEXT, brand TEXT, price INTEGER, aisle INTEGER, rating INTEGER);
+
+INSERT INTO clothes VALUES (1, "shirt", "balenciaga", 200, 1, 4);
+INSERT INTO clothes VALUES (2, "pants", "gucci", 300, 2, 4);
+INSERT INTO clothes VALUES (3, "shirt", "gucci", 250, 1, 3);
+INSERT INTO clothes VALUES (4, "shirt", "valentino", 400, 1, 5);
+INSERT INTO clothes VALUES (5, "pants", "levi", 50, 2, 3);
+INSERT INTO clothes VALUES (6, "pants", "chanel", 300, 2, 5);
+INSERT INTO clothes VALUES (7, "shoes", "louis vuitton", 500, 3, 4);
+INSERT INTO clothes VALUES (8, "shoes", "louis vuitton", 600, 3, 4);
+INSERT INTO clothes VALUES (9, "shirt", "dior", 225, 1, 2);
+INSERT INTO clothes VALUES (10, "shirt", "valentino", 270, 1, 5);
+INSERT INTO clothes VALUES (11, "pants", "chanel", 150, 2, 4);
+INSERT INTO clothes VALUES (12, "shirt", "gucci", 550, 1, 3);
+INSERT INTO clothes VALUES (13, "shoes", "gucci", 300, 3, 3);
+INSERT INTO clothes VALUES (14, "shoes", "balenciaga", 230, 3, 5);
+INSERT INTO clothes VALUES (15, "shirt", "dior", 180, 1, 3);
+
+-- display database ordered by price
+SELECT * FROM clothes 
+ORDER BY price asc;
+
+-- what is the avg price in the gucci brand?
+SELECT AVG(price) "avg gucci brand price"
+FROM clothes
+WHERE brand= "gucci";
+
+-- what are the 5 most highly rated brands?
+SELECT brand, price, rating
+FROM clothing
+ORDER BY rating asc
+LIMIT 5;
